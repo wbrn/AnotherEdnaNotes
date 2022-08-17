@@ -26,6 +26,7 @@ import ru.dsavelev.anotherednanotes.model.Note
 import ru.dsavelev.anotherednanotes.navigation.NavRoute
 import ru.dsavelev.anotherednanotes.ui.theme.MainViewModel
 import ru.dsavelev.anotherednanotes.ui.theme.MainViewModelFactory
+import ru.dsavelev.anotherednanotes.utils.Constants
 
 @Composable
 fun MainScreen(navController: NavHostController, viewModel: MainViewModel) {
@@ -38,7 +39,7 @@ fun MainScreen(navController: NavHostController, viewModel: MainViewModel) {
             }) {
             Icon(
                 imageVector = Icons.Filled.Add,
-                contentDescription = "Add Icon",
+                contentDescription = Constants.Keys.ADD_ICON,
                 tint = Color.White
             )
         }
@@ -65,7 +66,7 @@ fun MainScreen(navController: NavHostController, viewModel: MainViewModel) {
             .fillMaxWidth()
             .padding(vertical = 8.dp, horizontal = 24.dp)
             .clickable {
-                navController.navigate(NavRoute.Note.route)
+                navController.navigate(NavRoute.Note.route + "/${note.id}")
             },
             elevation = 6.dp
         ) {

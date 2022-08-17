@@ -19,6 +19,7 @@ import ru.dsavelev.anotherednanotes.navigation.NavRoute
 import ru.dsavelev.anotherednanotes.ui.theme.AnotherEdnaNotesTheme
 import ru.dsavelev.anotherednanotes.ui.theme.MainViewModel
 import ru.dsavelev.anotherednanotes.ui.theme.MainViewModelFactory
+import ru.dsavelev.anotherednanotes.utils.Constants
 import ru.dsavelev.anotherednanotes.utils.TYPE_FIREBASE
 import ru.dsavelev.anotherednanotes.utils.TYPE_ROOM
 
@@ -35,7 +36,7 @@ fun StartScreen(navController: NavHostController, viewModel: MainViewModel) {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            Text(text = "What will we use?")
+            Text(text = Constants.Keys.WHAT_WILL_WE_USE)
             Button(
                 onClick = {
                     mViewModel.initDatabase(TYPE_ROOM){
@@ -46,7 +47,7 @@ fun StartScreen(navController: NavHostController, viewModel: MainViewModel) {
                     .width(200.dp)
                     .padding(vertical = 8.dp)
             ) {
-                Text(text = "Room database")
+                Text(text = Constants.Keys.ROOM_DATABASE)
             }
             Button(
                 onClick = {
@@ -58,7 +59,7 @@ fun StartScreen(navController: NavHostController, viewModel: MainViewModel) {
                     .width(200.dp)
                     .padding(vertical = 8.dp)
             ) {
-                Text(text = "Firebase database")
+                Text(text = Constants.Keys.FIREBASE_DATABASE)
 
             }
         }
