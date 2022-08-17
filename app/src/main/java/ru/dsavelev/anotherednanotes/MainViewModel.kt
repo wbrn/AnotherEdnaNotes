@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.lifecycle.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import ru.dsavelev.anotherednanotes.database.firebase.AppFirebaseRepository
 import ru.dsavelev.anotherednanotes.database.room.dao.AppRoomDatabase
 import ru.dsavelev.anotherednanotes.database.room.dao.repository.RoomRepository
 import ru.dsavelev.anotherednanotes.model.Note
@@ -26,6 +27,13 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                 val dao = AppRoomDatabase.getInstance(context = context).getRoomDao()
                 REPOSITORY = RoomRepository(dao)
                 onSuccess()
+            }
+            TYPE_FIREBASE -> {
+               REPOSITORY = AppFirebaseRepository()
+                REPOSITORY.connectToDatabase(
+                    { onSuccess()},
+                    { Log.d("checkData", "Error: ${it}")}
+                )
             }
         }
     }
