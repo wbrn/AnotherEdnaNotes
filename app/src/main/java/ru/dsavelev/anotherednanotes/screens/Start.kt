@@ -23,7 +23,7 @@ import ru.dsavelev.anotherednanotes.utils.TYPE_FIREBASE
 import ru.dsavelev.anotherednanotes.utils.TYPE_ROOM
 
 @Composable
-fun StartScreen(navController: NavHostController) {
+fun StartScreen(navController: NavHostController, viewModel: MainViewModel) {
     val context = LocalContext.current
     val mViewModel: MainViewModel =
         viewModel(factory = MainViewModelFactory(context.applicationContext as Application))

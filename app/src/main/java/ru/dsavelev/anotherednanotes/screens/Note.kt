@@ -15,9 +15,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
+import ru.dsavelev.anotherednanotes.ui.theme.MainViewModel
 
 @Composable
-fun NoteScreen(navController: NavHostController) {
+fun NoteScreen(navController: NavHostController, viewModel: MainViewModel) {
     Scaffold(modifier = Modifier.fillMaxSize()
     )
     {
