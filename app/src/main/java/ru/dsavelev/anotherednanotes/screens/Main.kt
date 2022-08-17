@@ -27,6 +27,9 @@ import ru.dsavelev.anotherednanotes.navigation.NavRoute
 import ru.dsavelev.anotherednanotes.ui.theme.MainViewModel
 import ru.dsavelev.anotherednanotes.ui.theme.MainViewModelFactory
 import ru.dsavelev.anotherednanotes.utils.Constants
+import ru.dsavelev.anotherednanotes.utils.DB_TYPE
+import ru.dsavelev.anotherednanotes.utils.TYPE_FIREBASE
+import ru.dsavelev.anotherednanotes.utils.TYPE_ROOM
 
 @Composable
 fun MainScreen(navController: NavHostController, viewModel: MainViewModel) {
@@ -62,11 +65,16 @@ fun MainScreen(navController: NavHostController, viewModel: MainViewModel) {
 }
 @Composable
     fun NoteItem(note: Note, navController: NavController){
+        val noteId = when(DB_TYPE) {
+            TYPE_FIREBASE -> note.firebaseId
+            TYPE_ROOM -> note.id
+            else -> Constants.Keys.EMPTY
+        }
         Card(modifier = Modifier
             .fillMaxWidth()
             .padding(vertical = 8.dp, horizontal = 24.dp)
             .clickable {
-                navController.navigate(NavRoute.Note.route + "/${note.id}")
+                navController.navigate(NavRoute.Note.route + "/${noteId}")
             },
             elevation = 6.dp
         ) {
