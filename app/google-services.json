@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "144181120906",
+    "project_id": "anotherednanotes",
+    "storage_bucket": "anotherednanotes.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:144181120906:android:cea492252ca0911af5c273",
+        "android_client_info": {
+          "package_name": "ru.dsavelev.anotherednanotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "144181120906-esro6tdtrfhv6g7pc0aogce442etvs3a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBE0SvsQQmRTFNg6_HKzf8aR4J9rizYOF0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "144181120906-esro6tdtrfhv6g7pc0aogce442etvs3a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
